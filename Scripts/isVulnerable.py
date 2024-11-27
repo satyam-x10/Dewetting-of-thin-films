@@ -42,8 +42,8 @@ def process_dat_files(root_directory, save_directory):
                                 try:
                                     value_to_check = abs(float(columns[-4]))  # Take the absolute value
                                 except (ValueError, IndexError) as e:
-                                    print(f"Error parsing value in line: {line.strip()}")
-                                    print(f"Skipping line due to error: {e}")
+                                    # print(f"Error parsing value in line: {line.strip()}")
+                                    # print(f"Skipping line due to error: {e}")
                                     continue
                                 
                                 # Add a new column based on the condition
@@ -61,7 +61,7 @@ def process_dat_files(root_directory, save_directory):
     print("Processing completed.")
 
 # Replace the paths with your directory structure
-root_directory = "./data"  # Path containing folders like 20_100, 24_100, etc.
+root_directory = "G:\BTP\data"  # Path containing folders like 20_100, 24_100, etc.
 save_directory = "./processed"  # Path to save processed files
 
 process_dat_files(root_directory, save_directory)

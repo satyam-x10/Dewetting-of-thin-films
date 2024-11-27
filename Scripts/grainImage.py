@@ -48,10 +48,7 @@ def create_grain_images_with_boundaries(input_directory, output_directory):
                         grain_grid[x, y] = grain_id  # Populate grain grid
                         if value == 1:
                             # Highlight a 5x5 area for red pixels (indicating specific condition)
-                            for i in range(-2, 3):
-                                for j in range(-2, 3):
-                                    if 0 <= x + i < max_x and 0 <= y + j < max_y:
-                                        image_grid[x + i, y + j] = [255, 0, 0]  # Red
+                            image_grid[x , y ] = [255, 0, 0]  # Red
                         else:
                             image_grid[x, y] = [255, 255, 0]  # Yellow for other points
 
