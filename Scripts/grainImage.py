@@ -55,7 +55,7 @@ def create_grain_images_with_boundaries(input_directory, output_directory):
                                 if 0 <= x + i < max_x and 0 <= y + j < max_y:
                                     image_grid[x + i, y + j] = [255, 0, 0]  # Red
                     else:
-                        image_grid[x, y] = [255, 255, 0]  # Yellow
+                        image_grid[x, y] = [135, 206, 235]  # Sky Blue
 
                 # Mark grain boundaries
                 for x in range(max_x):
