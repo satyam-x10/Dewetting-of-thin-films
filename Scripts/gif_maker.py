@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+from natsort import natsorted  # For natural sorting
 
 def create_gif_from_images(image_folder, output_gif_path, duration=200):
     """
@@ -16,8 +17,8 @@ def create_gif_from_images(image_folder, output_gif_path, duration=200):
     print(f"Loading images from folder: {image_folder}")
     print(f"Saving GIF to: {output_gif_path}")
 
-    # List all image files in the folder
-    image_files = sorted(
+    # List all image files in the folder and sort them naturally
+    image_files = natsorted(
         [os.path.join(image_folder, f) for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg'))]
     )
     
@@ -25,7 +26,7 @@ def create_gif_from_images(image_folder, output_gif_path, duration=200):
         print("No image files found in the folder. Exiting.")
         return
 
-    print(f"Found {len(image_files)} images to process.")
+    print(f"Found {len(image_files)} images to process in serial order.")
 
     # Open images and store them in a list
     images = []
@@ -51,7 +52,7 @@ def create_gif_from_images(image_folder, output_gif_path, duration=200):
         print(f"Error creating GIF: {e}")
 
 # Folder containing images
-image_folder = r"G:\BTP\Dewetting-of-thin-films\grain_images_with_red_regions\24h_1000\output\grain"
+image_folder = r"G:\BTP\Dewetting-of-thin-films\grain_images_with_grooves\24h_1000\output\grain"
 
 # Path to save the GIF
 output_gif_path = r"G:\BTP\Dewetting-of-thin-films\grain_animation.gif"

@@ -87,8 +87,8 @@ def create_grain_images_with_boundaries(input_directory, output_directory):
 
     print("Grain boundary image generation with red regions completed.")
 
-# Replace the paths with your directory structure
+
 input_directory = "./processed"  # Directory containing the .dat files
-output_directory = "./grain_images_with_holes"  # Directory to save generated images
+output_directory = "./grain_images_with_grooves"  # Directory to save generated images
 
 create_grain_images_with_boundaries(input_directory, output_directory)
