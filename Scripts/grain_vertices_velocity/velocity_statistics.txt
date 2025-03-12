@@ -1,0 +1,20 @@
+Vertex Velocity Statistics
+==========================
+
+Total vertices tracked: 6576
+Normal vertices count: 15764
+Vulnerable vertices count: 6
+
+Normal vertices statistics:
+  Mean velocity: 0.0002
+  Median velocity: 0.0000
+  Max velocity: 0.0045
+  Min velocity: 0.0000
+  Standard deviation: 0.0003
+
+Vulnerable vertices statistics:
+  Mean velocity: 0.0002
+  Median velocity: 0.0000
+  Max velocity: 0.0005
+  Min velocity: 0.0000
+  Standard deviation: 0.0002

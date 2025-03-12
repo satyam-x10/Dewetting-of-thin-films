@@ -15,7 +15,7 @@ def process_dat_files(root_directory, save_directory):
     for folder, subfolders, files in os.walk(root_directory):
         if os.path.basename(folder) == "grain" and "output" in os.path.dirname(folder):
             total_folders += 1
-            total_files += len([file for file in files if file.endswith(".dat")])
+            total_files += len([file for file in files if file.endswith(".dat") and file.startswith("2d")])
 
     print(f"Total folders to process: {total_folders}")
     print("-" * 50)
@@ -33,7 +33,7 @@ def process_dat_files(root_directory, save_directory):
 
             # Process all .dat files in the current folder
             for file in files:
-                if file.endswith(".dat"):
+                if file.endswith(".dat") and file.startswith("2d"):
                     input_file = os.path.join(folder, file)
                     output_file = os.path.join(save_path, file)
                     processed_files += 1
@@ -58,7 +58,6 @@ def process_dat_files(root_directory, save_directory):
                                 # Write the modified line to the output file
                                 outfile.write("\t".join(columns) + "\n")
 
-                        # print(f"Processed file saved: {output_file}")
                     except Exception as e:
                         print(f"Error processing file {input_file}: {e}")
                         continue
@@ -66,7 +65,7 @@ def process_dat_files(root_directory, save_directory):
     print("Processing completed.")
 
 # Replace the paths with your directory structure
-root_directory = r"C:\sem7\btp\data"  # Path containing folders like 20_100, 24_100, etc.
+root_directory = r"../"  # Path containing folders like 20_100, 24_100, etc.
 save_directory = "./processed"  # Path to save processed files
 
 process_dat_files(root_directory, save_directory)
